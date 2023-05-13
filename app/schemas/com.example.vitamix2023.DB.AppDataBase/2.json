@@ -1,0 +1,96 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "e2e1dece0db1536153376b54d322d7b4",
+    "entities": [
+      {
+        "tableName": "userlog_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mUserId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mUsername` TEXT, `mPassword` TEXT, `misAdmin` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "mUserId",
+            "columnName": "mUserId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mUsername",
+            "columnName": "mUsername",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mPassword",
+            "columnName": "mPassword",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "misAdmin",
+            "columnName": "misAdmin",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "mUserId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "vitamins_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mVitaminId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mName` TEXT, `mFocus` TEXT, `mPrice` TEXT, `mUserId` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mVitaminId",
+            "columnName": "mVitaminId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mName",
+            "columnName": "mName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mFocus",
+            "columnName": "mFocus",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mPrice",
+            "columnName": "mPrice",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mUserId",
+            "columnName": "mUserId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "mVitaminId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e2e1dece0db1536153376b54d322d7b4')"
+    ]
+  }
+}

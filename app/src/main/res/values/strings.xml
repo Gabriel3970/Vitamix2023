@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Vitamix, Control Your Macros!</string>
+    <string name="UserName"></string>
+    <string name = "StockDisplay"></string>
+    <string name = "UserDisplay">User</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+</resources>
